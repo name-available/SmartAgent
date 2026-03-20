@@ -1,6 +1,7 @@
 # SmartAgent: Multi-agent-based [S]imulation of Real-world Stock [Mar]ket [T]rading
 
 ## Introduction
+Please see the [introduction](SmartAgent_Report.pdf).
 
 ## Setup
 
