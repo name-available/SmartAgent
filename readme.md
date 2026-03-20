@@ -1,7 +1,6 @@
 # SmartAgent: Multi-agent-based [S]imulation of Real-world Stock [Mar]ket [T]rading
 
 ## Introduction
-This repository is used for COMP7409 Machine learning in trading and finance [Section 2B, 2024] course.
 
 ## Setup
 
