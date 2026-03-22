@@ -9,14 +9,19 @@ This diagram illustrates how a trading agent makes its own trading decisions.
 And the entire trading simulation process includes three modules: Investment Module, Transaction Module, and BBS Module.
 
 ### Investment Module
-Investment Module, is designed for simulating heterogeneous investor behaviors in financial markets. It includes functions like Interest Repayment, Bankrupt Check, Loan Decision and so on. We design it firstly by initializing each AI agent with randomized capital between 100,000 to 5 million units and assign one of four distinct trading personalities: conservative, aggressive, balanced, or growth-oriented. The system incorporates authentic market constraints: variable interest loans from
-2.7% to 3.3%, and mandatory bankruptcy procedures when cash turns negative. The breakthrough here is our LLM-powered decision core. Using either GPT or Gemini, agents process real-time market data, financial reports, and BBS discussions to generate JSON-formatted trading decisions.
+The Investment Module is designed to simulate heterogeneous investor behavior in financial markets. It incorporates key functions such as interest repayment, bankruptcy checks, and loan decision-making. Each AI agent is initialized with randomized capital ranging from 100,000 to 5 million units and is assigned one of four trading profiles: conservative, aggressive, balanced, or growth-oriented. The module enforces realistic market constraints, including variable interest rates (2.7%–3.3%) and mandatory bankruptcy procedures when cash balances become negative.
+
+A central innovation lies in the LLM-driven decision core: leveraging models such as GPT or Gemini, agents integrate real-time market data, financial reports, and online discussions to generate structured, JSON-formatted trading decisions.
 
 ### Transaction Module
-At each session start, we randomize the agent execution sequence using a random clock algorithm, preventing artificial deadlocks that plague traditional simulations. Agents submit orders to a limit order book implemented through optimized dictionary structures. Our trade matching has O(1) complexity. Here we have two key factors: First, we update prices strictly based on last-executed trades. Second, we enforce real-world transaction costs including stamp duties and tiered commissions. The workflow is: random sequencing → order processing → price updates → position reconciliation. This creates what we call “computational market microstructure”.
+At the beginning of each session, agent execution order is randomized via a stochastic scheduling mechanism, mitigating artificial deadlocks common in conventional simulations. Agents submit orders to a limit order book implemented using optimized dictionary-based data structures, enabling O(1) trade matching complexity.
+
+Two key design principles are enforced: (1) prices are updated strictly based on the last executed trades, and (2) realistic transaction costs, including stamp duties and tiered commissions, are incorporated. The overall workflow follows a structured pipeline: random sequencing → order processing → price updating → position reconciliation. This design collectively forms a computational representation of market microstructure.
 
 ### BBS Module
-We have the social dimension, BBS Module. After the market closes, agents post natural language analyses like: Tech sector volatility expected due to supply chain concerns. These anonymous tips are archived and become visible to all agents next trading day, and create an information diffusion network. This directly influences next-day predictions through structured outputs, as agents output decisions combines market data and social sentiment.
+The BBS Module captures the social dimension of the market. After each trading session, agents generate natural language analyses (e.g., expectations of increased volatility due to supply chain disruptions). These anonymized posts are archived and made accessible to all agents in the subsequent session, forming an information diffusion network.
+
+This mechanism directly influences next-day decision-making: agents integrate both market data and aggregated social sentiment to produce structured outputs, enabling the modeling of socially informed trading behavior.
 
 ## Setup
 
