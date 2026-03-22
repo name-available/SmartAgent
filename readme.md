@@ -4,7 +4,7 @@
 Please see the [report](SmartAgent_Report.pdf) to get to know this project.
 
 This diagram illustrates how a trading agent makes its own trading decisions.
-![Figure 1. Information sources in making decisios](figure/figure1_decision.png)
+![Figure 1. Information sources in making decisios](figure/figure1_decision.png#pic_center=60%)
 
 And the entire trading simulation process includes three modules: Investment Module, Transaction Module, and BBS Module.
 
